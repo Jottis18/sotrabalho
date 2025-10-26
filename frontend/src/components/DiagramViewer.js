@@ -58,7 +58,7 @@ const DiagramViewer = ({ diagramData, isLoading, inputProcesses, onAlgorithmChan
 
   const resetDiagram = () => {
     setIsPlaying(false);
-    setCurrentTime(0);
+
   };
 
   const handleZoomIn = () => {
