@@ -24,7 +24,7 @@ const DiagramViewer = ({ diagramData, isLoading, inputProcesses, onAlgorithmChan
     if (onAlgorithmChange) {
       onAlgorithmChange(algorithmId);
     }
-  // };
+  };
 
   if (isLoading) {
     return (
@@ -54,37 +54,37 @@ const DiagramViewer = ({ diagramData, isLoading, inputProcesses, onAlgorithmChan
 
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
-  // };
+  };
 
   const resetDiagram = () => {
     setIsPlaying(false);
     setCurrentTime(0);
-  // };
+  };
 
   const handleZoomIn = () => {
     setZoom(Math.min(zoom + 0.2, 2));
-  // };
+  };
 
   const handleZoomOut = () => {
     setZoom(Math.max(zoom - 0.2, 0.5));
-  // };
+  };
 
   const getProcessState = (processId, time) => {
     const process = processes.find(p => p.id === processId);
     if (!process || time >= process.timeline.length) return 'idle';
     return process.timeline[time];
-  // };
+  };
 
 
   const getStateLabel = (state) => {
-    // switch (state) {
+    switch (state) {
       case 'running': return 'Executando';
       case 'waiting': return 'Esperando';
       case 'completed': return 'Concluído';
       case 'idle': return 'Ocioso';
       default: return 'Desconhecido';
     }
-  // };
+  };
 
   return (
     <div className="diagram-container">
